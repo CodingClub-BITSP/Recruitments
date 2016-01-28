@@ -1,0 +1,27 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{clrscr();
+int num;
+cout<<"Enter the number between 1 to 150 whose factorial you want to find";
+cin>>num;
+int count,a,b;
+int arr[500];
+arr[0]=1,count=1,a=0;
+for(int i=1;i<=num;i++)
+{for(int j=0;j<count;j++)
+{
+b=arr[j]*i+a;
+arr[j]=b%10;
+a=b/10;
+}
+while(a>0)
+{arr[count]=a%10;
+a=a/10;
+count++;
+}
+}
+for(int k=count-1;k>=0;k--)
+cout<<arr[k];
+getch();
+}
